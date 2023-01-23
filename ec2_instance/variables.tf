@@ -9,6 +9,6 @@ variable "instance_type" {
 }
 
 variable "security_groups" {
-  type = string
-  default = "sg-03bf5ae22b55426ea"
+  type = list
+  default = ["sg-03bf5ae22b55426ea"]
 }
