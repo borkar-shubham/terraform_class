@@ -8,6 +8,6 @@ terraform {
 }
 
 provider "aws" {
-  profile = shubham
+  profile = "shubham"
   region = "eu-north-1"
 }
