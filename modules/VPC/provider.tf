@@ -6,3 +6,8 @@ terraform {
     }
   }
 }
+
+provider "aws" {
+  profile = "shubham"
+  region  = "eu-north-1"
+}
