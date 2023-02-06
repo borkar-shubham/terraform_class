@@ -4,6 +4,10 @@ resource "aws_instance" "webserver" {
 
   tags = {
     Name = "MyServer"
-    Env = "Dev"
+    Env  = "Dev"
   }
+}
+
+output "ami" {
+  value = aws_instance.webserver.ami.id
 }
