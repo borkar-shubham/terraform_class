@@ -2,7 +2,7 @@
 resource "aws_security_group" "tf_vpc_sg" {
   name        = format("%s-%s-sg", var.namespace, var.env)
   description = "Allow public and private TCP connectivity"
-  vpc_id      = aws_vpc.tf_vpc.id
+  vpc_id      = aws_vpc.myvpc.id
 
   dynamic "ingress" {
     for_each = var.ingress
