@@ -1,5 +1,5 @@
 //creating security group
-resource "aws_security_group" "tf_vpc_sg" {
+resource "aws_security_group" "myvpc_sg" {
   name        = format("%s-%s-sg", var.namespace, var.env)
   description = "Allow public and private TCP connectivity"
   vpc_id      = aws_vpc.myvpc.id
