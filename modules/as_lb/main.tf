@@ -35,9 +35,6 @@ resource "aws_lb" "cbz_lb" {
 #   subnets            = [for subnet in aws_subnet.public : subnet.id]
   subnets            = ["subnet-09ee3c60a8c5c773c", "subnet-037268cd09d9ddd1f", "subnet-03989839a45cc5495"]
 
-
-  enable_deletion_protection = true
-
   tags = {
     Environment = "production"
   }
