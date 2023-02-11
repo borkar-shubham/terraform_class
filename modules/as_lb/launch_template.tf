@@ -4,7 +4,7 @@ resource "aws_launch_template" "cbz_lt" {
   instance_type = "t2.micro"
   key_name = "as_lb_key_pair"
   vpc_security_group_ids = ["sg-0b60c5abb150b0f1d"]
-  user_data = filebase64("${path.module}/example.sh")
+  user_data = filebase64("${path.module}/user_data.sh")
 
 #   iam_instance_profile {
 #     name = "test"
@@ -24,6 +24,6 @@ resource "aws_launch_template" "cbz_lt" {
 }
 
 resource "aws_key_pair" "as_lb_key_pair" {
-  key_name   = var.key_pair_name
+  key_name   = "cbz_key"
   public_key = file("${path.module}/id_rsa.pub")
 }
