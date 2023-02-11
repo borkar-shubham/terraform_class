@@ -3,7 +3,7 @@ resource "aws_launch_template" "cbz_lt" {
   image_id = "ami-0d32f1e246a0306ec"
   instance_type = "t2.micro"
   key_name = "as_lb_key_pair"
-  vpc_security_group_ids = ["sg-0b60c5abb150b0f1d"]
+#   vpc_security_group_ids = ["sg-0b60c5abb150b0f1d"]
   user_data = filebase64("${path.module}/user_data.sh")
 
 #   iam_instance_profile {
@@ -12,6 +12,7 @@ resource "aws_launch_template" "cbz_lt" {
 
   network_interfaces {
     associate_public_ip_address = true
+    security_groups             = ["sg-0b60c5abb150b0f1d"]
   }
 
   tag_specifications {
