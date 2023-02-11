@@ -2,7 +2,7 @@ resource "aws_launch_template" "cbz_lt" {
   name = "cbz_lt"
   image_id = "ami-0d32f1e246a0306ec"
   instance_type = "t2.micro"
-  key_name = "as_lb_key_pair"
+  key_name = "cbz_key"
 #   vpc_security_group_ids = ["sg-0b60c5abb150b0f1d"]
   user_data = filebase64("${path.module}/user_data.sh")
 
